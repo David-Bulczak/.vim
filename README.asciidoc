@@ -1,12 +1,31 @@
-= .vim
+= .vim directory
 
 This is my .vim directory with all of its plugins etc. Feel free to clone it and
 use it for your vim editor.
 
+My main focus is to uses my VIM editor like an IDE, thus for software
+development (especially C++  and related stuff). Until now I have configured
+some basics but there is still more work to do (syntax plugins, code completion,
+    ...). But I think it is a good starting point.
+If you have suggestions for nice and useful options, plugins, etc. then feel
+free to contact me (mailto:david.bulczak@gmail.com[david.bulczak@gmail.com]) and
+give me a hint.
+
 == Configuration
-The plugins that I use I have added to this repo via submodules. Clone the repo,
-load the submodules and then run the configure.sh script. Since I use the
-pathogen plugin, the script adds a symbolic link in the autoload directory. The
-script also sets a link in your home directory to the .vimrc in this repo. Thus
-be careful. Backup your existing .vimrc and .vim directory before using my
-setup.
+
+My VIM setup uses pathogen to handle all used plugins. All plugins (incl.
+pathogen) are included in this repo via git's submodule mechanism. Thus after
+cloning this repo you will have to init and update the submodules. I have also
+provided a simple shell script that configures some remaining stuff e.g. it sets
+some symbolic links s.t. pathogen and .vimrc work right. Thus you have to
+perform the following steps:
+
+.Steps
+. Clone this repo into your home directory with: git clone https://github.com/David-Bulczak/.vim.git
+. Init submodules: git submodule init
+. Update submodules: git submodule update
+. Run provided configure.sh script
+
+[red]*Caution:* This repo, especially the configure.sh script, may destroy your
+existing VIM configuration. Please backup your .vim directory, .vimrc
+file and all other VIM related files before your try to use this repo.
