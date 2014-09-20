@@ -1,4 +1,12 @@
-.vim
-====
+= .vim
 
-This is my .vim directory with all of its plugins etc.
+This is my .vim directory with all of its plugins etc. Feel free to clone it and
+use it for your vim editor.
+
+== Configuration
+The plugins that I use I have added to this repo via submodules. Clone the repo,
+load the submodules and then run the configure.sh script. Since I use the
+pathogen plugin, the script adds a symbolic link in the autoload directory. The
+script also sets a link in your home directory to the .vimrc in this repo. Thus
+be careful. Backup your existing .vimrc and .vim directory before using my
+setup.
