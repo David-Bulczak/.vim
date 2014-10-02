@@ -34,3 +34,9 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/vim-lua-inspect"]
+	path = bundle/vim-lua-inspect
+	url = https://github.com/xolox/vim-lua-inspect.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
