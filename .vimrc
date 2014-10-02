@@ -66,6 +66,12 @@ set pumheight=20
 let g:cmake_build_dirs = ["_build"]
 
 " --------------------
+"  ConnqueGDB
+" --------------------
+autocmd vimenter * ConqueGdb
+let g:ConqueGdb_Leader = ','
+
+" --------------------
 " NERDTree
 " -------------------- 
 autocmd vimenter * NERDTree
