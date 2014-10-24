@@ -43,3 +43,6 @@
 [submodule "bundle/Conque-GDB"]
 	path = bundle/Conque-GDB
 	url = https://github.com/vim-scripts/Conque-GDB.git
+[submodule "bundle/vim-glsl"]
+	path = bundle/vim-glsl
+	url = https://github.com/tikhomirov/vim-glsl.git

@@ -114,6 +114,9 @@ set cinoptions=g0
 setlocal spell spelllang=en_us
 ":set cursorline cursorcolumn
 :set cursorline 
+" tab and shift tab mapping as in other text editors
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 set t_Co=16                     " This is necessary for solarized theme since it needs 16 but not 8 colors
 set background=dark
@@ -147,4 +150,4 @@ autocmd BufRead,BufNewFile *.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
 "  CMake
 " -------------------- 
 
-au BufRead,BufNewFile CMakeLists.txt setlocal syntax=cmake-syntax
+"au BufRead,BufNewFile CMakeLists.txt setlocal syntax=cmake-syntax
