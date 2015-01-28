@@ -54,6 +54,7 @@ let g:clang_snippets_engine='clang_complete'
 "  YouCompleteMe
 " --------------------
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_confirm_extra_conf = 0
 
 " Complete options (disable preview scratch window, longest removed to aways
 " show menu)
@@ -85,6 +86,7 @@ autocmd VimEnter * wincmd p
 autocmd VimEnter * wincmd l 
 " close if last window is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd BufEnter * NERDTreeMirror
 
 " --------------------
 "  Syntastic
