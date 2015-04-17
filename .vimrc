@@ -125,13 +125,26 @@ setlocal spell spelllang=en_us
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
+set syntax=cpp.doxygen 
+
 set t_Co=16                     " This is necessary for solarized theme since it needs 16 but not 8 colors
 set background=dark
 colorscheme solarized
+:au FocusGained * :redraw!
 "let g:solarized_bold=1
 "let g:solarized_termcolors=256
 
 "let g:NERDTreeDirArrows=0
+
+" VIMlike tab movement 
+"nnoremap th  :tabfirst<CR>
+"nnoremap tj  :tabnext<CR>
+"nnoremap tk  :tabprev<CR>
+"nnoremap tl  :tablast<CR>
+"nnoremap tt  :tabedit<Space>
+"nnoremap tn  :tabnext<Space>
+"nnoremap tm  :tabm<Space>
+"nnoremap td  :tabclose<CR>
 
 " --------------------  
 "  Asciidoc
