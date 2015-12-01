@@ -110,6 +110,7 @@ let g:Tex_FoldedSections=""
 let g:Tex_FoldedEnvironments=""
 let g:Tex_FoldedMisc=""
 
+" --------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " -------------------- 
@@ -131,15 +132,21 @@ setlocal spell spelllang=en_us
 " tab and shift tab mapping as in other text editors
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
 set syntax=cpp.doxygen 
-
 set t_Co=16                     " This is necessary for solarized theme since it needs 16 but not 8 colors
 set background=dark
 colorscheme solarized
-:au FocusGained * :redraw!
-
+au FocusGained * :redraw!
 set cole=0
+
+" ---------------------
+"  My commands
+" ---------------------
+
+" edit .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" source .vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "let g:Tex_AutoFolding = 0
 
