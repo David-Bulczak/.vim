@@ -87,6 +87,7 @@ autocmd VimEnter * wincmd l
 " close if last window is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "autocmd BufEnter * NERDTreeMirror
+let g:nerdtree_tabs_open_on_console_startup=1
 
 " --------------------
 "  Syntastic
@@ -104,6 +105,10 @@ let g:DoxygenToolkit_blockHeader="----------------------------------------------
 let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="Mathias Lorente"
 let g:DoxygenToolkit_licenseTag="My own license"
+
+let g:Tex_FoldedSections=""
+let g:Tex_FoldedEnvironments=""
+let g:Tex_FoldedMisc=""
 
 " -------------------- 
 "  General settings
@@ -131,6 +136,11 @@ set t_Co=16                     " This is necessary for solarized theme since it
 set background=dark
 colorscheme solarized
 :au FocusGained * :redraw!
+
+set cole=0
+
+"let g:Tex_AutoFolding = 0
+
 "let g:solarized_bold=1
 "let g:solarized_termcolors=256
 
