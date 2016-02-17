@@ -55,6 +55,7 @@ Plugin 'vim-scripts/ShowMarks'
 
 " Airline
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " GLSL support
 Plugin 'tikhomirov/vim-glsl'
