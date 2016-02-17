@@ -11,11 +11,75 @@
 "   http://vim.wikia.com/wiki/Using_vim_as_an_IDE_all_in_one.
 "   Feel free to configure it.
 " ================================================== 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" " let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"
+" solarized colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
+" Ack (grep search style)
+Plugin 'mileszs/ack.vim'
+
+" GDB support
+Plugin 'vim-scripts/Conque-GDB'
+
+" CMake support
+Plugin 'jalcine/cmake.vim'
+
+" File search
+Plugin 'kien/ctrlp.vim'
+
+" Doxygen
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+
+" NERDCommenter
+Plugin 'scrooloose/nerdcommenter'
+
+" NERDTree
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+
+" Showmarks
+Plugin 'vim-scripts/ShowMarks'
+
+" Airline
+Plugin 'bling/vim-airline'
+
+" GLSL support
+Plugin 'tikhomirov/vim-glsl'
+
+" Lua support
+Plugin 'xolox/vim-lua-inspect'
+Plugin 'xolox/vim-misc'
+
+" Snippets
+Plugin 'garbas/vim-snipmate'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'honza/vim-snippets'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " -------------------- 
 "  Pathogen
 " --------------------
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " --------------------
 " ShowMarks
@@ -70,6 +134,7 @@ set pumheight=20
 "  CMake Vim
 " --------------------
 let g:cmake_build_dirs = ["_build"]
+let g:cmake_build_directories = ["_build"]
 
 " --------------------
 "  ConnqueGDB
@@ -89,6 +154,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "autocmd BufEnter * NERDTreeMirror
 let g:nerdtree_tabs_open_on_console_startup=1
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 " --------------------
 "  Syntastic
 " --------------------
@@ -140,13 +216,40 @@ au FocusGained * :redraw!
 set cole=0
 
 " ---------------------
-"  My commands
+"  My commands & abbrevations
 " ---------------------
 
 " edit .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " source .vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+" uppercase word
+nnoremap <leader>U viwUe
+" alternative normal mode entering
+inoremap jj <esc>l
+inoremap jk <esc>l
+" build project
+nnoremap <leader>b :silent execute "cd _build"<cr>:silent execute "make -j8"<cr>:silent execute "cd .."<cr>:copen<cr>:redraw!<cr>
+" copy to system clipboard (check if your vim supports is with :echo has('clipboard'))
+vnoremap <C-c> "+y
+" paste from system clipboard
+nnoremap <C-p> "+p
+nnoremap <C-p> "+v
+
+" --------------------
+"  My data
+" --------------------
+iabbrev @@g david.bulczak@gmail.com
+iabbrev @@d mail@david-bulczak.com
+iabbrev @@s david.bulczak@uni-siegen.com
+iabbrev @@r mail@raw-mind.com
+
+" --------------------
+"  Disabling for learning reasons
+" --------------------
+nnoremap <esc> <nop>
+vnoremap <esc> <nop>
+inoremap <esc> <nop>
 
 "let g:Tex_AutoFolding = 0
 
