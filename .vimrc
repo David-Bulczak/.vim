@@ -72,6 +72,10 @@ Plugin 'honza/vim-snippets'
 
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'exclipy/clang_indexer'
+Plugin 'LucHermitte/lh-dev'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/vim-clang'
 
 
 call vundle#end()            " required
@@ -190,6 +194,8 @@ let g:Tex_FoldedMisc=""
 " --------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" --------------------
+let g:ycm_server_python_interpreter="/usr/bin/python2.7"
 " -------------------- 
 "  General settings
 " -------------------- 
@@ -215,6 +221,7 @@ set background=dark
 colorscheme solarized
 au FocusGained * :redraw!
 set cole=0
+"set mouse=0
 
 " ---------------------
 "  My commands & abbrevations
@@ -274,8 +281,9 @@ inoremap <esc> <nop>
 " --------------------
 " Show tabs and trailing characters.
 "set listchars=tab:»·,trail:·,eol:¬
-set listchars=tab:»·,trail:·
-set list
+"set listchars=tab:»·,trail:·
+"set list
+"set nolist
 
 " Reformat paragraphs and list.
 nnoremap <Leader>r gq}
@@ -292,5 +300,6 @@ autocmd BufRead,BufNewFile *.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT
 " -------------------- 
 "  CMake
 " -------------------- 
+"
 
 "au BufRead,BufNewFile CMakeLists.txt setlocal syntax=cmake-syntax
